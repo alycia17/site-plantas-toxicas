@@ -1,9 +1,9 @@
 backend:
   name: auth0
-  login: true
   auth0:
     domain: dev-0chyajgytueknun3.us.auth0.com
     client_id: 1WOT2mTRPSEjDnTfTuOMPVrJEsub7beN
+    login: true
 
 media_folder: "static/img"
 public_folder: "/img"
