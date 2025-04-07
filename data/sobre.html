@@ -11,20 +11,62 @@
     <a href="index.html">← Voltar para início</a>
   </header>
 
-  <section class="sobre" id="conteudo-sobre">
+  <section id="equipe" class="equipe">
+    <h2>Equipe</h2>
+    <div id="imagens-equipe" class="galeria-equipe"></div>
+  </section>
+
+  <section id="conteudo-sobre" class="sobre">
+    <h2>Informações</h2>
     <p>Carregando conteúdo...</p>
   </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     fetch('_data/sobre.md')
       .then(res => res.text())
       .then(texto => {
-        const content = texto.split('---')[2]; // pega o conteúdo após os metadados
-        document.getElementById('conteudo-sobre').innerHTML = marked.parse(content);
+        const yamlFront = texto.split('---')[1];
+        const conteudoMd = texto.split('---')[2];
+
+        // Convertendo YAML manualmente (simples)
+        const imagens = [...yamlFront.matchAll(/imagem:\s*"(.*?)"\s*\n\s*legenda:\s*"(.*?)"/g)];
+        const galeria = document.getElementById('imagens-equipe');
+        imagens.forEach(([_, url, legenda]) => {
+          galeria.innerHTML += `
+            <div class="foto-equipe">
+              <img src="${url}" alt="${legenda}" />
+              <p>${legenda}</p>
+            </div>`;
+        });
+
+        // Carrega descrição da seção "sobre"
+        document.getElementById('conteudo-sobre').innerHTML += marked.parse(conteudoMd);
       });
   </script>
 
-  <!-- Biblioteca para converter Markdown -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+   .galeria-equipe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0; /* sem espaçamento entre as imagens */
+  justify-content: center;
+}
+
+.foto-equipe {
+  flex: 1 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+.foto-equipe img {
+  width: 200px;
+  height: auto;
+  display: block;
+  border-radius: 0; /* sem cantos arredondados */
+  box-shadow: none;
+  margin: 0;
+}
+  </style>
 </body>
 </html>

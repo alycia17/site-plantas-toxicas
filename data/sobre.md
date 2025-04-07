@@ -7,5 +7,5 @@ imagens:
   - imagem: "/images/equipe1.jpg"
     legenda: "Professora Solange Samarão"
   - imagem: "/images/equipe2.jpg"
-    legenda: "Equipe do Projeto"
+    legenda: "Equipe de extensão UENF"
 ---
