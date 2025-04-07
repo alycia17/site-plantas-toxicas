@@ -1,9 +1,5 @@
 backend:
-  name: auth0
-  auth0:
-    domain: dev-0chyajgytueknun3.us.auth0.com
-    client_id: 1WOT2mTRPSEjDnTfTuOMPVrJEsub7beN
-    login: true
+  name: git-gateway
 
 media_folder: "static/img"
 public_folder: "/img"
