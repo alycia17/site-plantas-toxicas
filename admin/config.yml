@@ -1,35 +1,21 @@
 backend:
-  name: auth0
-  login: https://dev-0chyajgytueknun3.us.auth0.com
-  client_id: 1WOT2mTRPSEjDnTfTuOMPVrJEsub7beN
-  repo: alycia17/site-plantas-toxicas
-  branch: main
+  name: git-gateway
+  login: auth0
+  auth0:
+    domain: dev-0chyajgytueknun3.us.auth0.com
+    client_id: 1WOT2mTRPSEjDnTfTuOMPVrJEsub7beN
+
+media_folder: "static/img"
+public_folder: "/img"
 
 collections:
   - name: "plantas"
-    label: "Plantas Tóxicas"
-    folder: "plantas"
+    label: "Plantas"
+    folder: "conteudo/plantas"
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "title", label: "Nome da Planta", widget: "string" }
-      - { name: "descricao", label: "Descrição", widget: "text" }
-      - { name: "imagem", label: "Imagem", widget: "image" }
-
-  - name: "sobre"
-    label: "Sobre o Projeto"
-    files:
-      - file: "_data/sobre.md"
-        label: "Informações do Projeto"
-        name: "sobre"
-        fields:
-          - { name: "titulo", label: "Título", widget: "string" }
-          - { name: "descricao", label: "Descrição", widget: "text" }
-          - { name: "email", label: "E-mail", widget: "string" }
-          - { name: "instagram", label: "Instagram", widget: "string" }
-          - label: "Imagens da Equipe"
-            name: "imagens"
-            widget: "list"
-            fields:
-              - { name: "imagem", label: "Imagem", widget: "image" }
-              - { name: "legenda", label: "Legenda", widget: "string" }
+      - { label: "Nome Popular", name: "nome_popular", widget: "string" }
+      - { label: "Nome Científico", name: "nome_cientifico", widget: "string" }
+      - { label: "Toxicidade", name: "toxicidade", widget: "text" }
+      - { label: "Imagem", name: "imagem", widget: "image" }
