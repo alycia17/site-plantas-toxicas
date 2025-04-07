@@ -1,0 +1,18 @@
+backend:
+  - name: "sobre"
+    label: "Sobre o Projeto"
+    files:
+      - label: "Informações Gerais"
+        name: "info"
+        file: "_data/sobre.md"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Descrição", name: "descricao", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Instagram", name: "instagram", widget: "string" }
+          - label: "Imagens da Equipe"
+            name: "imagens"
+            widget: "list"
+            fields:
+              - { label: "Imagem", name: "imagem", widget: "image" }
+              - { label: "Legenda", name: "legenda", widget: "string" }
