@@ -16,3 +16,14 @@ backend:
             fields:
               - { label: "Imagem", name: "imagem", widget: "image" }
               - { label: "Legenda", name: "legenda", widget: "string" }
+    collections:
+  - name: "plantas"
+    label: "Plantas Tóxicas"
+    folder: "plantas"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome", name: "nome", widget: "string" }
+      - { label: "Nome Científico", name: "nome_cientifico", widget: "string" }
+      - { label: "Efeitos Tóxicos", name: "efeitos", widget: "text" }
+      - { label: "Imagem", name: "imagem", widget: "image", required: false }

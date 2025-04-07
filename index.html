@@ -18,10 +18,14 @@
     <p><strong>Contato:</strong> plantoxicasornamentais@gmail.com | Instagram: @plantatoxicasornamentais</p>
   </section>
 
-  <section class="plantas">
-    <h2>Lista de Plantas Tóxicas</h2>
-    <div id="lista-plantas"></div>
-  </section>
+  <div class="planta">
+    <h2>{{ nome }}</h2>
+    <p><strong>Nome científico:</strong> {{ nome_cientifico }}</p>
+    <p><strong>Efeitos tóxicos:</strong> {{ efeitos }}</p>
+    {% if imagem %}
+      <img src="{{ imagem }}" alt="Imagem da planta {{ nome }}" class="planta-imagem" />
+    {% endif %}
+  </div>
 
   <footer>
     <p>&copy; 2025 Projeto de Extensão - UENF</p>
