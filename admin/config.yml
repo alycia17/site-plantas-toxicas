@@ -1,9 +1,9 @@
 backend:
-  name: git-gateway
+  name: auth0
+  login: https://dev-0chyajgytueknun3.us.auth0.com
+  client_id: 1WOT2mTRPSEjDnTfTuOMPVrJEsub7beN
+  repo: alycia17/site-plantas-toxicas
   branch: main
-
-media_folder: "imagens"         # pasta onde os arquivos serão salvos
-public_folder: "/imagens"       # caminho de acesso no navegador
 
 collections:
   - name: "plantas"
