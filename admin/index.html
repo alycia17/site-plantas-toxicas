@@ -3,12 +3,40 @@
   <head>
     <meta charset="UTF-8">
     <title>Painel Administrativo</title>
+
+    <!-- Estilo básico -->
+    <style>
+      body {
+        background: #f0f4f8;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .admin-container {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        text-align: center;
+      }
+      h1 {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+      }
+    </style>
   </head>
   <body>
-    <!-- Carrega o Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <div class="admin-container">
+      <h1>Área Administrativa</h1>
+      <!-- Aqui o Netlify CMS aparece -->
+      <div id="cms"></div>
+    </div>
 
-    <!-- Carrega o Netlify Identity para login/cadastro -->
+    <!-- Scripts do Netlify CMS e Identity -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
       if (window.netlifyIdentity) {
